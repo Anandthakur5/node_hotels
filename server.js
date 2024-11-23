@@ -1,15 +1,15 @@
 const express = require("express");
 const app = express();
+const db = require('./db.js'); 
+require('dotenv').config();
 
+const PORT = process.env.PORT || 3000;
 
 
 // middleware start
 const bodyParser = require("body-parser");
 app.use(bodyParser.json()); 
 // middleware end
-
-const db = require('./db.js'); 
-const PORT = 3000;
 
 app.get("/", (req, res) => {
     res.send("hello Welcome to my hotel");
